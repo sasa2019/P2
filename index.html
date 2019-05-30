@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href= "style.css">
+    <title>My Cryptocoin Hub</title>
+
+</head>
+<body class ="body" background="money.jpg" class="parallax">
+    <header class="header">
+        <img src="cryptocoin.jpg" class="image">
+        <h1 class="h1">My Cryptocoin Hub</h1> 
+    </header>
+
+   
+
+
+    <nav class="navbar navbar-dark bg-dark" id="nav">
+        <button class="btn btn-dark" id="getCoins" onclick= "clearInterval(myInterval), getCoins()">Home</button>
+        <button class="btn btn-dark" id="LiveReports" onclick="liveUpdates()">Live Reports</button>
+        <button class="btn btn-dark" id="About" onclick="about()">About</button>
+        <div class="autocomplete" style="width:300px;">
+        <input type="search"  input id="coinName" onkeypress="handle(event)" placeholder="Enter a Coin Code"  title = "Please Enter the Full Coin Code" border-radius: 50%; autofocus>
+        </div>
+        <button type="submit" class="btn btn-dark" onclick="search()" title = "Please Enter the Full Coin Code">Search</button>
+      </nav>
+    
+      
+    <div class="button"></div>
+    
+    <div id="root" ></div>
+    <div id="chartContainer" style="height: 400px; width: 75%; padding-left: 166px;"></div>
+    <div id="message"></div>
+    
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="display"></div>
+          <button class="btn btn-primary" style = "position:absolute; bottom:15px; left:20px;" class="back" onclick="close()">Back</button>
+          <button class="btn btn-primary" style = "position:absolute; bottom:15px; right:20px;" onclick="window.intervalId = setInterval(liveUpdates, 2000)">Live Reports</button>
+        </div>  
+      </div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="home.js"></script>
+    <script src="liveUpdates.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+    
+
+</body>
+</html>
